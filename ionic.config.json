@@ -1,0 +1,7 @@
+{
+  "name": "kitModerator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
