@@ -62,5 +62,14 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.4.4"
   },
-  "description": "An Ionic project"
+
+  "description": "An Ionic project",
+  "jscpd": {
+    "exclude": ["**/node_modules/**", "**/.idea/**"],
+    "ignore": ["**/*.xml"],
+    "reporters": ["console", "html"],
+    "minTokens": 50,
+    "minLines": 5,
+    "gitignore": true
+  }
 }
