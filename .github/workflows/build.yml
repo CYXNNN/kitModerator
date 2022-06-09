@@ -3,8 +3,6 @@ on:
   push:
     tags:
       - release/**
-    branches:
-      - master
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
