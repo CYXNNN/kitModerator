@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() {
+    console.log('anything'); // duplicate line
+    console.log('anything'); // duplicate line
+    console.log('anything'); // duplicate line
+  }
 }
