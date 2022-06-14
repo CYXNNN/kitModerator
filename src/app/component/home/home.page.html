@@ -4,7 +4,6 @@
       kitModerator
     </ion-title>
   </ion-toolbar>
-  <!-- test -->
 </ion-header>
 
 <ion-content id="content" [fullscreen]="true">
@@ -17,9 +16,9 @@
   <div id="container">
     <h2>Welcome!</h2>
     <h4>Choose a customer</h4>
-    <ion-button href="#">Kita Sonnenhalde</ion-button>
-    <ion-button href="#">Kita Gugus</ion-button>
-    <ion-button href="#">Kita Test</ion-button>
-    <ion-button href="#">Kita Josef</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Sonnenhalde</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Gugus</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Test</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Josef</ion-button>
   </div>
 </ion-content>

@@ -1,8 +1,8 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Child} from './model/child';
-import {Kita} from './model/kita';
+import {Child} from '../model/child';
+import {Kita} from '../model/kita';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class KitaService {
   constructor(private http: HttpClient) {}
 
   public getChildren(): Observable<Child> {
-    return this.http.get<Child>(`${this.api}/child/`);
+    return this.http.get<Child>(`${this.api}/child/all`);
   }
 
   public getKita(identifier: string): Observable<Kita> {

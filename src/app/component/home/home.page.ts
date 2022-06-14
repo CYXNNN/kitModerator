@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ClientService} from '../../service/user.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,6 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {
-    console.log('anything'); // duplicate line
-    console.log('anything'); // duplicate line
-    console.log('anything'); // duplicate line
+  constructor(private clientService: ClientService) {
   }
 }
