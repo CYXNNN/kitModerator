@@ -1,24 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      kitModerator
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="kitModerator" [transcluent]="true"></app-header>
 
 <ion-content id="content" [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">kitModerator</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-header title="kitModerator" collapse="condense"></app-header>
 
   <div id="container">
     <h2>Welcome!</h2>
     <h4>Choose a customer</h4>
-    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Sonnenhalde</ion-button>
-    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Gugus</ion-button>
-    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Test</ion-button>
-    <ion-button routerLink="children" (click)="clientService.selectKita()">Kita Josef</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita('SONNENFELD')">Kita Sonnenhalde</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita('GUGUS')">Kita Gugus</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita('GUGUS')">Kita Test</ion-button>
+    <ion-button routerLink="children" (click)="clientService.selectKita('GUGUS')">Kita Josef</ion-button>
   </div>
 </ion-content>
