@@ -1,0 +1,18 @@
+<app-header title="Kinder" [transcluent]="true"></app-header>
+
+<ion-content id="content" [fullscreen]="true" class="ion-padding">
+  <app-header title="Kinder" collapse="condense"></app-header>
+
+  <ion-text color="primary">
+    <p>Füllen Sie das Formular vollständig aus.</p>
+  </ion-text>
+  <form [formGroup]="form">
+
+    <ion-item *ngFor="let f of getKeys()" lines="full">
+        <ion-label position="floating">{{f.key}}</ion-label>
+        <ion-input [type]="f.type" [formControlName]="f.key" [value]="getControl(f.key).value"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" color="primary" expand="block">Submit</ion-button>
+  </form>
+</ion-content>

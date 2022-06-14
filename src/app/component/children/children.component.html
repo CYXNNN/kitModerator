@@ -1,10 +1,10 @@
-<app-header title="Abwesenheitsmeldungen" [transcluent]="true"></app-header>
+<app-header title="Kinder" [transcluent]="true"></app-header>
 
 <ion-content id="content" [fullscreen]="true" class="ion-padding">
-  <app-header title="Abwesenheitsmeldungen" collapse="condense"></app-header>
+  <app-header title="Kinder" collapse="condense"></app-header>
 
   <ion-text color="primary">
-    <p>Wählen Sie das entsprechende Kind aus der Liste aus.</p>
+    <p>Wählen Sie das Kind, für welches Sie eine Abwesenheit erfassen wollen, aus der Liste aus.</p>
   </ion-text>
 
   <ion-list-header>
@@ -12,7 +12,7 @@
   </ion-list-header>
 
   <ion-list>
-    <ion-item *ngFor="let child of (children$ | async)" [button]="true">
+    <ion-item *ngFor="let child of (children$ | async)" [button]="true" [routerLink]="['/abwesenheit', child.id]">
 
       <ion-avatar slot="start">
         <img src="https://avatars.dicebear.com/api/adventurer/{{child.name}}.svg">
