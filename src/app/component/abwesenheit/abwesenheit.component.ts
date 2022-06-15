@@ -7,34 +7,29 @@ import {ClientService} from '../../service/user.service';
   templateUrl: './abwesenheit.component.html',
   styleUrls: ['./abwesenheit.component.scss'],
 })
-export class AbwesenheitComponent implements OnInit {
+export class AbwesenheitComponent {
 
   form: FormGroup;
 
-
   constructor(private fb: FormBuilder, private client: ClientService) {
 
+    // create empty form group
     this.form = this.fb.group({});
 
+    // fill form with fields defined in customer config
     this.client.customer.abwesenheitForm.forEach(field => {
       this.form.addControl(field.key, new FormControl(null, Validators.required));
     });
-
   }
-
-  ngOnInit() {}
 
   getKeys = () => this.client.customer.abwesenheitForm;
   getControl = (key: string) => this.form.get(key);
 
-  submit(): void {
+  confirmed(me: any): void {
+    console.log('confirmed', me.form.value);
   }
 
-  confirmed(): void {
-    console.log('confirmed');
-  }
-
-  canceled(): void {
+  canceled(me: any): void {
     console.log('canceled');
   }
 }

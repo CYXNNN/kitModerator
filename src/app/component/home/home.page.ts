@@ -10,4 +10,8 @@ export class HomePage {
 
   constructor(private clientService: ClientService) {
   }
+
+  select = (key: 'GUGUS' | 'SONNENFELD') => {
+    this.clientService.selectKita(key);
+  };
 }

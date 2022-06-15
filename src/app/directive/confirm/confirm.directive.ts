@@ -8,10 +8,13 @@ import {AlertController} from '@ionic/angular';
 export class ConfirmDirective {
 
   @Input()
-  confirm: () => void;
+  ctx: any;
 
   @Input()
-  cancel: () => void;
+  confirm: (ctx: any) => void;
+
+  @Input()
+  cancel: (ctx: any) => void;
 
   @Input()
   titleKey = 'Sind Sie sicher?';
@@ -25,35 +28,30 @@ export class ConfirmDirective {
   @Input()
   cancelKey = 'Abbrechen';
 
+  dialog: HTMLIonAlertElement;
 
-  dialog: Promise<HTMLIonAlertElement>;
+  constructor(private el: ElementRef, private alertController: AlertController) {}
 
-  constructor(private el: ElementRef, private alertController: AlertController) {
-    this.dialog = this.alertController.create({
+  /**
+   * sadly reference gets destroyed after a handler function was executed
+   * so the dialog must be created every time upon firing
+   */
+  @HostListener('click') show(): void {
+    this.alertController.create({
       header: this.titleKey,
       message: this.messageKey,
       buttons: [{
         text: this.cancelKey,
         role: 'cancel',
         handler: () => {
-          this.cancel();
+          this.cancel(this.ctx);
         }
       }, {
         text: this.confirmKey,
         handler: () => {
-          this.confirm();
+          this.confirm(this.ctx);
         }
       }]
-    });
+    }).then(dialog => dialog.present());
   }
-
-  @HostListener('click') click() {
-    this.show();
-  }
-
-  show(): void {
-    this.dialog.then( (d) => d.present());
-  }
-
-
 }

@@ -6,13 +6,14 @@
   <ion-text color="primary">
     <p>Füllen Sie das Formular vollständig aus.</p>
   </ion-text>
-  <form [formGroup]="form" (submit)="submit()">
+  <form [formGroup]="form">
 
     <ion-item *ngFor="let field of getKeys()" lines="full">
         <ion-label position="floating">{{field.key}}</ion-label>
         <ion-input [type]="field.type" [formControlName]="field.key" [value]="getControl(field.key).value"></ion-input>
     </ion-item>
 
-    <ion-button type="submit" color="primary" expand="block" [confirm]="confirmed" [cancel]="canceled">Submit</ion-button>
+    <ion-button type="submit" color="primary" expand="block" [disabled]="!form.valid"
+                [confirm]="confirmed" [cancel]="canceled" [ctx]="this">Submit</ion-button>
   </form>
 </ion-content>

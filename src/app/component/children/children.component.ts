@@ -19,4 +19,5 @@ export class ChildrenComponent implements OnInit {
 
   ngOnInit() {}
 
+  renderRow = (child: Child) => this.client.customer.childrenRowRenderer(child);
 }

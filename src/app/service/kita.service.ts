@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
 import {Child} from '../model/child';
 import {Kita} from '../model/kita';
 
@@ -9,7 +10,7 @@ import {Kita} from '../model/kita';
 })
 export class KitaService {
 
-  api = 'http://localhost:8080/api/v1';
+  api = environment.api;
 
   constructor(private http: HttpClient) {}
 
