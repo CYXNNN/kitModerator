@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {FormField} from '../../model/formField';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ClientService} from '../../service/user.service';
 
 @Component({
@@ -12,6 +11,7 @@ export class AbwesenheitComponent implements OnInit {
 
   form: FormGroup;
 
+
   constructor(private fb: FormBuilder, private client: ClientService) {
 
     this.form = this.fb.group({});
@@ -19,16 +19,22 @@ export class AbwesenheitComponent implements OnInit {
     this.client.customer.abwesenheitForm.forEach(field => {
       this.form.addControl(field.key, new FormControl(null, Validators.required));
     });
-  }
 
-  getKeys(): FormField[] {
-    return this.client.customer.abwesenheitForm;
-  }
-
-  getControl(key: string): AbstractControl {
-    return this.form.get(key);
   }
 
   ngOnInit() {}
 
+  getKeys = () => this.client.customer.abwesenheitForm;
+  getControl = (key: string) => this.form.get(key);
+
+  submit(): void {
+  }
+
+  confirmed(): void {
+    console.log('confirmed');
+  }
+
+  canceled(): void {
+    console.log('canceled');
+  }
 }

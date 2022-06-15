@@ -9,6 +9,7 @@ export class Customer {
 
   abwesenheitForm: FormField[] = [
     new FormField('name'),
+    new FormField('reason'),
     new FormField('from', 'date',['custom-datepicker']),
     new FormField('to', 'date', ['custom-datepicker'])
   ];

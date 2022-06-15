@@ -4,8 +4,8 @@ export class FormField {
   key: string;
   type: string;
 
-  constructor(key: string, type: string = 'text', cls: string[] = []) {
-    this.class = cls;
+  constructor(key: string, type: string = 'text', customClasses: string[] = []) {
+    this.class = customClasses;
     this.type = type;
     this.key = key;
   }
