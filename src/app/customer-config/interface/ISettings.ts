@@ -1,6 +1,6 @@
 export interface ISettings {
 
   avatars: boolean;
-  labelStyle: 'floating' | 'top';
+  labelStyle: 'fixed' | 'floating' | 'stacked' | undefined;
 
 }

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {ClientService} from '../../service/user.service';
+import {ClientService} from '../../service/client.service';
 
 @Component({
   selector: 'app-abwesenheit',
@@ -31,6 +31,5 @@ export class AbwesenheitComponent {
   }
 
   getKeys = () => this.client.config.forms.abwesenheitAdd;
-  getControl = (key: string) => this.form.get(key);
 
 }

@@ -14,8 +14,9 @@ export class ClientService {
     this.userId = 'parental-identifier';
   }
 
-  public selectKita(identifier: 'GUGUS' | 'SONNENFELD'): void {
+  public selectKita(identifier: 'GUGUS' | 'default'): void {
     this.config = load(identifier);
+    console.log('config loaded: ', this.config);
   }
 }
 

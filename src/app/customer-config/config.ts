@@ -16,12 +16,12 @@ export class Config implements IConfig {
   };
 
   icons: IIcons = {
-    add: 'add-circle-outline',
+    add: '',
     back: 'arrow-back-outline',
   };
 
   renderer: IRenderer = {
-    childrenRow: (child: Child) => `${child.lastname} ${child.name}`,
+    childrenRow: (child: Child) => `${child.lastname}`,
   };
 
   forms: IForms = {

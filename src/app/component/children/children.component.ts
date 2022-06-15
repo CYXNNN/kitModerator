@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
+import {ClientService} from '../../service/client.service';
 import {KitaService} from '../../service/kita.service';
-import {ClientService} from '../../service/user.service';
 
 @Component({
   selector: 'app-children',

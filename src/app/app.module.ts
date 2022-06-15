@@ -12,6 +12,7 @@ import {AbwesenheitComponent} from './component/abwesenheit/abwesenheit.componen
 import {ChildrenComponent} from './component/children/children.component';
 import {HeaderComponent} from './component/header/header.component';
 import {HomePage} from './component/home/home.page';
+import {InputComponent} from './component/input/input.component';
 import {ConfirmDirective} from './directive/confirm.directive';
 
 @NgModule({
@@ -22,6 +23,7 @@ import {ConfirmDirective} from './directive/confirm.directive';
     HeaderComponent,
     AbwesenheitComponent,
     ConfirmDirective,
+    InputComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],

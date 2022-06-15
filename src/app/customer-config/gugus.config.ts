@@ -1,3 +1,4 @@
+import {Child} from '../model/child';
 import {Config} from './config';
 
 export class GugusConfig extends Config {
@@ -9,4 +10,13 @@ export class GugusConfig extends Config {
     avatars: true,
   };
 
+  icons = {
+    ...this.icons,
+    add: 'add-circle-outline',
+  };
+
+  renderer = {
+    ...this.renderer,
+    childrenRow: (child: Child) => `${child.lastname} ${child.name}`,
+  };
 }

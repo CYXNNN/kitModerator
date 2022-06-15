@@ -10,11 +10,7 @@
   <form [formGroup]="form">
 
     <ion-item *ngFor="let field of getKeys()" lines="full">
-      <ion-label position="floating">{{field.key}}</ion-label>
-      <ion-input [type]="field.type"
-                 [formControlName]="field.key"
-                 [ngClass]="field.cls"
-                 [value]="getControl(field.key).value"></ion-input>
+      <app-input [field]="field" [form]="form"></app-input>
     </ion-item>
 
     <ion-button type="submit" color="primary" expand="block"

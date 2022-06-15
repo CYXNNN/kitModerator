@@ -1,0 +1,8 @@
+<div [formGroup]="form">
+
+  <ion-label position="{{labelStyle()}}">{{field.key}}</ion-label>
+  <ion-input [type]="field.type"
+             [formControlName]="field.key"
+             [ngClass]="field.cls"
+             [value]="getControl(field.key).value"></ion-input>
+</div>
