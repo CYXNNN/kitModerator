@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Config} from '../model/config';
+import {Config} from '../customer-config/config';
+import {GugusConfig} from '../customer-config/gugus.config';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import {Config} from '../model/config';
 export class ClientService {
 
   userId: string;
-  config: Config = new Config();
+  config: Config = new GugusConfig();
 
   public signIn(): void {
     this.userId = 'parental-identifier';
@@ -18,6 +19,8 @@ export class ClientService {
       ...this.config,
       identifier,
     };
+
+    console.log(this.config);
   }
 }
 
