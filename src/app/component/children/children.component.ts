@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
-import {KitaService} from '../../service/kita.service';
 import {Child} from '../../model/child';
+import {KitaService} from '../../service/kita.service';
 import {ClientService} from '../../service/user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {ClientService} from '../../service/user.service';
   templateUrl: './children.component.html',
   styleUrls: ['./children.component.scss'],
 })
-export class ChildrenComponent implements OnInit {
+export class ChildrenComponent {
 
   children$: Observable<Child>;
 
@@ -17,7 +17,7 @@ export class ChildrenComponent implements OnInit {
     this.children$ = this.service.getChildren();
   }
 
-  ngOnInit() {}
-
-  renderRow = (child: Child) => this.client.customer.childrenRowRenderer(child);
+  showAvatars = () => this.client.config.settings.avatars;
+  icon = () => this.client.config.icons.add;
+  renderRow = (child: Child) => this.client.config.renderer.childrenRow(child);
 }

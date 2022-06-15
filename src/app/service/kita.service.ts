@@ -12,7 +12,8 @@ export class KitaService {
 
   api = environment.api;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   public getChildren(): Observable<Child> {
     return this.http.get<Child>(`${this.api}/child/all`);

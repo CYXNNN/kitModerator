@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ClientService} from '../../service/user.service';
 
@@ -17,19 +17,20 @@ export class AbwesenheitComponent {
     this.form = this.fb.group({});
 
     // fill form with fields defined in customer config
-    this.client.customer.abwesenheitForm.forEach(field => {
+    this.client.config.forms.abwesenheitAdd.forEach(field => {
       this.form.addControl(field.key, new FormControl(null, Validators.required));
     });
   }
 
-  getKeys = () => this.client.customer.abwesenheitForm;
-  getControl = (key: string) => this.form.get(key);
-
-  confirmed(me: any): void {
-    console.log('confirmed', me.form.value);
+  confirmed(ctx: any): void {
+    console.log('confirmed', ctx.form.value);
   }
 
-  canceled(me: any): void {
+  canceled(ctx: any): void {
     console.log('canceled');
   }
+
+  getKeys = () => this.client.config.forms.abwesenheitAdd;
+  getControl = (key: string) => this.form.get(key);
+
 }

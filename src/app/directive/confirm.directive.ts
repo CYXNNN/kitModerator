@@ -1,9 +1,9 @@
-import {Component, Directive, ElementRef, HostListener, Input, Output} from '@angular/core';
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 import {AlertController} from '@ionic/angular';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[confirm]'
+  selector: '[confirm]',
 })
 export class ConfirmDirective {
 
@@ -28,9 +28,8 @@ export class ConfirmDirective {
   @Input()
   cancelKey = 'Abbrechen';
 
-  dialog: HTMLIonAlertElement;
-
-  constructor(private el: ElementRef, private alertController: AlertController) {}
+  constructor(private el: ElementRef, private alertController: AlertController) {
+  }
 
   /**
    * sadly reference gets destroyed after a handler function was executed
@@ -40,18 +39,20 @@ export class ConfirmDirective {
     this.alertController.create({
       header: this.titleKey,
       message: this.messageKey,
-      buttons: [{
-        text: this.cancelKey,
-        role: 'cancel',
-        handler: () => {
-          this.cancel(this.ctx);
-        }
-      }, {
-        text: this.confirmKey,
-        handler: () => {
-          this.confirm(this.ctx);
-        }
-      }]
+      buttons: [
+        {
+          text: this.cancelKey,
+          role: 'cancel',
+          handler: () => {
+            this.cancel(this.ctx);
+          },
+        }, {
+          text: this.confirmKey,
+          handler: () => {
+            this.confirm(this.ctx);
+          },
+        },
+      ],
     }).then(dialog => dialog.present());
   }
 }

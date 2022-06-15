@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Child} from '../model/child';
-import {Customer} from '../model/customer';
+import {Config} from '../model/config';
 
 @Injectable({
   providedIn: 'root',
@@ -8,17 +7,15 @@ import {Customer} from '../model/customer';
 export class ClientService {
 
   userId: string;
-  customer: Customer = new Customer();
-
-  constructor() {}
+  config: Config = new Config();
 
   public signIn(): void {
     this.userId = 'parental-identifier';
   }
 
   public selectKita(identifier: 'GUGUS' | 'SONNENFELD'): void {
-    this.customer = {
-      ...this.customer,
+    this.config = {
+      ...this.config,
       identifier,
     };
   }

@@ -1,11 +1,11 @@
 export class FormField {
 
-  class: string[];
+  cls: string[];
   key: string;
   type: string;
 
   constructor(key: string, type: string = 'text', customClasses: string[] = []) {
-    this.class = customClasses;
+    this.cls = customClasses;
     this.type = type;
     this.key = key;
   }
