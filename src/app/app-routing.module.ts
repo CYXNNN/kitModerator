@@ -1,26 +1,31 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {AbwesenheitComponent} from './component/abwesenheit/abwesenheit.component';
 import {ChildrenComponent} from './component/children/children.component';
+import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {HomePage} from './component/home/home.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: HomePage,
+  }, {
+    path: 'dashboard',
+    component: DashboardComponent,
   }, {
     path: 'children',
-    component: ChildrenComponent
-  },{
+    component: ChildrenComponent,
+  }, {
     path: 'abwesenheit/:id',
-    component: AbwesenheitComponent
+    component: AbwesenheitComponent,
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

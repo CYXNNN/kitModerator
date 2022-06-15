@@ -14,9 +14,11 @@
   <ion-list>
     <ion-item *ngFor="let child of (children$ | async)" [button]="true" [routerLink]="['/abwesenheit', child.id]">
 
-      <ion-avatar slot="start" *ngIf="showAvatars()">
-        <img alt="{{child.name}}" src="https://avatars.dicebear.com/api/adventurer/{{child.name}}.svg">
-      </ion-avatar>
+      <ng-container *ngIf="showAvatars()">
+        <ion-avatar slot="start">
+          <img alt="{{child.name}}" src="https://avatars.dicebear.com/api/adventurer/{{child.name}}.svg">
+        </ion-avatar>
+      </ng-container>
 
       <ion-label>{{renderRow(child)}}</ion-label>
       <ion-icon name="{{icon()}}"></ion-icon>
@@ -24,9 +26,3 @@
   </ion-list>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
