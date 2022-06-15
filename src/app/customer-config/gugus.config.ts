@@ -6,10 +6,7 @@ export class GugusConfig extends Config {
 
   settings = {
     ...this.settings,
-  };
-
-  icons = {
-    ...this.icons,
+    avatars: true,
   };
 
 }

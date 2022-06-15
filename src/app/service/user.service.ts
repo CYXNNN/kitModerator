@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Config} from '../customer-config/config';
-import {GugusConfig} from '../customer-config/gugus.config';
+import load from '../customer-config/loader/config.loader';
 
 @Injectable({
   providedIn: 'root',
@@ -8,19 +8,14 @@ import {GugusConfig} from '../customer-config/gugus.config';
 export class ClientService {
 
   userId: string;
-  config: Config = new GugusConfig();
+  config: Config = new Config();
 
   public signIn(): void {
     this.userId = 'parental-identifier';
   }
 
   public selectKita(identifier: 'GUGUS' | 'SONNENFELD'): void {
-    this.config = {
-      ...this.config,
-      identifier,
-    };
-
-    console.log(this.config);
+    this.config = load(identifier);
   }
 }
 
