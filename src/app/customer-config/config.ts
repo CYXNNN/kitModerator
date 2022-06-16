@@ -32,5 +32,4 @@ export class Config implements IConfig {
       new FormField('comment'),
     ],
   };
-
 }

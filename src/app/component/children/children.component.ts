@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
 import {ClientService} from '../../service/client.service';
@@ -9,14 +9,11 @@ import {KitaService} from '../../service/kita.service';
   templateUrl: './children.component.html',
   styleUrls: ['./children.component.scss'],
 })
-export class ChildrenComponent implements OnInit {
+export class ChildrenComponent {
 
   children$: Observable<Child>;
 
   constructor(private service: KitaService, private client: ClientService) {
-  }
-
-  public ngOnInit(): void {
     this.children$ = this.service.getChildren();
   }
 
