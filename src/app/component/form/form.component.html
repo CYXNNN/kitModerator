@@ -1,10 +1,27 @@
-<form [formGroup]="form" (submit)="submitted(this)">
+<form [formGroup]="form">
 
   <ion-item *ngFor="let field of getKeys()" lines="full">
     <app-input [field]="field" [form]="form"></app-input>
   </ion-item>
 
-  <ion-button type="submit" color="primary" expand="block"
-              [confirm]="confirmed" [cancel]="cancelled" [ctx]="this">Submit
-  </ion-button>
+  <ng-container *ngIf="confirmDialog(); else submitOnly">
+    <ion-button type="submit"
+                color="primary"
+                expand="block"
+                [confirm]="confirmed"
+                [cancel]="cancelled"
+                [ctx]="this">
+      Submit
+    </ion-button>
+
+  </ng-container>
 </form>
+
+<ng-template #submitOnly>
+  <ion-button type="submit"
+              color="primary"
+              expand="block"
+              (click)="submitted(this)">
+    Submit
+  </ion-button>
+</ng-template>

@@ -11,14 +11,9 @@ export class AbwesenheitComponent implements IForm {
 
   constructor(private client: ClientService) {
 
-  }
-
-  public cancelled(ctx: any): void {
-    console.log('cancelled');
-  }
-
-  public confirmed(ctx: any): void {
-    console.log('confirmed');
+    if (this.submitted) {
+      console.log('cognitive complexity?');
+    }
   }
 
   public submitted(ctx: any): void {
