@@ -1,5 +1,5 @@
 import {Child} from '../model/child';
-import {Config} from './config';
+import {Config} from './_config';
 
 export class GugusConfig extends Config {
 

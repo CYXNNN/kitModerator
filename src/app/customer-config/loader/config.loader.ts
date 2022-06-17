@@ -1,4 +1,4 @@
-import {Config} from '../config';
+import {Config} from '../_config';
 import {GugusConfig} from '../gugus.config';
 
 export default (identifier: string) => {

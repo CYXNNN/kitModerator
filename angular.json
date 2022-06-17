@@ -32,8 +32,18 @@
               }
             ],
             "styles": [
-              "src/theme/variables.scss",
-              "src/global.scss"
+              "src/global.scss",
+              {
+                "input": "src/theme/_default/default.scss",
+                "bundleName": "default",
+                "inject": false
+              },
+              {
+                "input": "src/theme/gugus/gugus.scss",
+                "bundleName": "gugus",
+                "inject": false
+              }
+
             ],
             "scripts": [],
             "aot": false,

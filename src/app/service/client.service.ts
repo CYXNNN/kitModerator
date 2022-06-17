@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Config} from '../customer-config/config';
+import {Config} from '../customer-config/_config';
 import load from '../customer-config/loader/config.loader';
 
 @Injectable({
