@@ -5,7 +5,7 @@ import {ISettings} from './ISettings';
 
 export interface IConfig {
 
-  readonly identifier: string;
+  readonly identifier;
 
   settings: ISettings;
   icons: IIcons;

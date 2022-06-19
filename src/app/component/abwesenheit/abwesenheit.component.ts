@@ -11,9 +11,6 @@ export class AbwesenheitComponent implements IForm {
 
   constructor(private client: ClientService) {
 
-    if (this.submitted) {
-      console.log('cognitive complexity?');
-    }
   }
 
   public submitted(ctx: any): void {

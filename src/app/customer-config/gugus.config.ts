@@ -3,7 +3,7 @@ import {Config} from './_config';
 
 export class GugusConfig extends Config {
 
-  readonly identifier = 'GUGUS';
+  readonly identifier = 'gugus';
 
   settings = {
     ...this.settings,

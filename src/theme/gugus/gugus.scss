@@ -1,12 +1,11 @@
 @import "../variables";
 
-@media (prefers-color-scheme: dark) {
-  @import "gugus-dark";
-}
-
 :root {
 
 }
 
+@media (prefers-color-scheme: dark) {
+  @import "gugus-dark";
+}
 
 

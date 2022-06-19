@@ -30,12 +30,6 @@ export class FormComponent implements OnInit {
   public ngOnInit(): void { // create empty form group
     this.form = this.fb.group({});
 
-    if (this.submitted) {
-      console.log('cognitive complexity?');
-    } else {
-      console.error('hello');
-    }
-
     // fill form with fields defined in customer config
     this.getKeys().forEach(field => {
       this.form.addControl(field.key, new FormControl(null, Validators.required));

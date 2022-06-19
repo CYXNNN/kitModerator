@@ -11,7 +11,7 @@ export class HomePage {
   constructor(private clientService: ClientService) {
   }
 
-  select = (key: 'GUGUS' | 'default') => {
+  select = (key: 'gugus' | 'default') => {
     this.clientService.selectKita(key);
   };
 }

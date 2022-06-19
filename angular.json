@@ -35,13 +35,11 @@
               "src/global.scss",
               {
                 "input": "src/theme/_default/default.scss",
-                "bundleName": "default",
-                "inject": false
+                "bundleName": "default"
               },
               {
                 "input": "src/theme/gugus/gugus.scss",
-                "bundleName": "gugus",
-                "inject": false
+                "bundleName": "gugus"
               }
 
             ],

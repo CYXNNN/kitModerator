@@ -1,11 +1,11 @@
 @import "../variables";
 
-@media (prefers-color-scheme: dark) {
-  @import "default-dark";
+:root {
+  --highlight-color-invalid: green;
 }
 
-:root {
-
+@media (prefers-color-scheme: dark) {
+  @import "default-dark";
 }
 
 
