@@ -15,22 +15,20 @@ export class Config implements IConfig {
   };
 
   icons: IIcons = {
-    forward: 'arrow-forward-outline',
-    back: 'arrow-back-outline',
+    add: 'add-circle',
+    forward: 'arrow-forward',
+    back: 'arrow-back',
   };
 
   renderer: IRenderer = {
     childRow: child => `${child.lastname}`,
-    abwesenheitRow: abwesenheit => {
-      debugger;
-      return `${abwesenheit.reason}`;
-    },
+    abwesenheitRow: abwesenheit => `${abwesenheit.reason}`,
   };
 
   forms: IForms = {
     abwesenheitAdd: [
-      new FormField('from', 'date', ['custom-datepicker']),
-      new FormField('to', 'date', ['custom-datepicker']),
+      new FormField('from', 'datetime-local', ['custom-datepicker']),
+      new FormField('to', 'datetime-local', ['custom-datepicker']),
       new FormField('reason'),
       new FormField('comment'),
     ],

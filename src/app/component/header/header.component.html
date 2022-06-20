@@ -9,6 +9,10 @@
     <ion-title>
       {{title}}
     </ion-title>
+
+    <ion-buttons slot="end" *ngIf="!isFrontpage()">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

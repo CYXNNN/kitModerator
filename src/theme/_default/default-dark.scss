@@ -1,12 +1,16 @@
+:root {
+  --padding: 10px;
+}
+
 body {
-  --ion-color-primary: #1a361a;
-}
+  --ion-color-primary: green;
 
-.ios body {
-}
+  ion-card {
+    border-radius: 5px;
+  }
 
-.ios ion-modal {
-}
-
-.md body {
+  ion-card-title,
+  ion-card-subtitle {
+    font-weight: bold;
+  }
 }

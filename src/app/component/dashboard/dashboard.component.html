@@ -3,10 +3,18 @@
 <ion-content id="content" [fullscreen]="true" class="ion-padding">
   <app-header title="Dashboard" collapse="condense"></app-header>
 
+
+  <!-- children section start -->
+  <app-children-card></app-children-card>
+  <!-- children section end -->
+
   <!-- abwesenheiten section start -->
   <app-abwesenheit-list [limit]="3"></app-abwesenheit-list>
-  <ion-button slot="" routerLink="/children">Melden</ion-button>
-  <ion-button slot="" routerLink="/abwesenheiten">Alle</ion-button>
+  <ion-button routerLink="/children">
+    <ion-icon [name]="add()"></ion-icon>
+    Hinzufügen
+  </ion-button>
+  <ion-button fill="outline" routerLink="/abwesenheiten">Alle</ion-button>
   <!-- abwesenheiten section end -->
 
 </ion-content>

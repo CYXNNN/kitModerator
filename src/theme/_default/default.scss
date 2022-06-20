@@ -3,9 +3,20 @@
 :root {
 }
 
-@media (prefers-color-scheme: dark) {
-  @import "default-dark";
+app-abwesenheit {
+  ion-item {
+    background-color: transparent;
+    margin-bottom: 20px;
+  }
 }
 
+app-form {
+  .item-native {
+    border-radius: 5px;
+  }
+}
 
+@media (prefers-color-scheme: dark) {
 
+  @import "default-dark";
+}

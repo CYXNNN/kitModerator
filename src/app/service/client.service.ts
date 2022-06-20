@@ -22,9 +22,9 @@ export class ClientService {
 
   private injectTheme(): void {
 
-    const head = this.document.getElementsByTagName('head')[0];
     this.removeTheme();
 
+    const head = this.document.getElementsByTagName('head')[0];
     const link = this.document.createElement('link');
     link.id = 'theme';
     link.rel = 'stylesheet';
@@ -37,6 +37,7 @@ export class ClientService {
   }
 
   private removeTheme(): void {
+
     const currentTheme = this.document.getElementById('theme');
 
     if (currentTheme) {

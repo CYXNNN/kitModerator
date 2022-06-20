@@ -21,13 +21,13 @@ export class AbwesenheitListComponent {
   abwesenheiten$: Observable<Abwesenheit[]>;
 
   constructor(private service: DataService, private client: ClientService) {
+
+    // prepare data
     this.abwesenheiten$ = this.service.abwesenheiten$.pipe(
-      map(x => x.sort((
-        a: Abwesenheit,
-        b: Abwesenheit,
-      ) => new Date(b.created).getTime() - new Date(a.created).getTime())),
+      map(x => x.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())),
       map(x => x.slice(0, this.limit)),
     );
+
   }
 
   icon = () => this.client.config.icons.forward;

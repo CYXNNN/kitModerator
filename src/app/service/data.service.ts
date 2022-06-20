@@ -19,14 +19,14 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  public postAbwesenheit(abwesenheit: Abwesenheit): void {
-    this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, abwesenheit)
-      .subscribe(res => this.abwesenheiten$.next([...this.abwesenheiten$.value, res]));
-  }
-
   public loadData(): void {
     this.loadChildren();
     this.loadAbwesenheiten();
+  }
+
+  public postAbwesenheit(abwesenheit: Abwesenheit): void {
+    this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, abwesenheit)
+      .subscribe(res => this.abwesenheiten$.next([...this.abwesenheiten$.value, res]));
   }
 
   private loadAbwesenheiten(): void {
