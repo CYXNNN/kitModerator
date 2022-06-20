@@ -8,33 +8,28 @@ import load from '../customer-config/loader/config.loader';
 })
 export class ClientService {
 
-  userId: string;
+  userId: 'parental-identifier';
   config: Config = new Config();
 
   constructor(@Inject(DOCUMENT) private document: Document) {
   }
 
-  public signIn(): void {
-    this.userId = 'parental-identifier';
-  }
-
-  public selectKita(identifier: 'gugus' | 'default'): void {
+  public selectCustomer(identifier: 'gugus' | 'default'): void {
     this.config = load(identifier);
-    console.log('config loaded: ', this.config);
     this.setTheme();
+    console.log('config loaded: ', this.config);
   }
 
   private setTheme(): void {
+
     const head = this.document.getElementsByTagName('head')[0];
+    const link = this.document.createElement('link');
 
-    const style = this.document.createElement('link');
-    const identifierLow = this.config.identifier;
+    link.id = 'theme';
+    link.rel = 'stylesheet';
+    link.href = `${this.config.identifier}.css`;
 
-    style.id = 'client-theme';
-    style.rel = 'stylesheet';
-    style.href = `${identifierLow}.css`;
+    head.appendChild(link);
 
-    head.appendChild(style);
   }
 }
-

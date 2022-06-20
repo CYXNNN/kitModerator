@@ -1,11 +1,10 @@
 <app-header title="Kinder" [transcluent]="true"></app-header>
 
 <ion-content id="content" [fullscreen]="true" class="ion-padding">
+
   <app-header title="Kinder" collapse="condense"></app-header>
 
-  <ion-text color="primary">
-    <p>Füllen Sie das Formular vollständig aus.</p>
-  </ion-text>
+  <app-textbox key="Füllen Sie das Formular vollständig aus."></app-textbox>
 
   <app-form [config]="client.config.forms.abwesenheitAdd"
             [cancelled]="cancelled"

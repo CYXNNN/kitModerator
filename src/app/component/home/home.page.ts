@@ -12,6 +12,6 @@ export class HomePage {
   }
 
   select = (key: 'gugus' | 'default') => {
-    this.clientService.selectKita(key);
+    this.clientService.selectCustomer(key);
   };
 }

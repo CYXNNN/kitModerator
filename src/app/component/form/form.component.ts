@@ -27,7 +27,8 @@ export class FormComponent implements OnInit {
 
   }
 
-  public ngOnInit(): void { // create empty form group
+  public ngOnInit(): void {
+    // create empty form group
     this.form = this.fb.group({});
 
     // fill form with fields defined in customer config

@@ -16,7 +16,7 @@ export class Config implements IConfig {
   };
 
   icons: IIcons = {
-    add: 'add-circle-outline',
+    forward: 'arrow-forward-outline',
     back: 'arrow-back-outline',
   };
 

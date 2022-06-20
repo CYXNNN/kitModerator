@@ -21,6 +21,6 @@ export class ChildrenListComponent {
   }
 
   showAvatars = () => this.client.config.settings.avatars;
-  icon = () => this.client.config.icons.add;
+  icon = () => this.client.config.icons.forward;
   renderRow = (child: Child) => this.client.config.renderer.childrenRow(child);
 }

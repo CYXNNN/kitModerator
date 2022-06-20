@@ -12,7 +12,6 @@ export class GugusConfig extends Config {
 
   icons = {
     ...this.icons,
-    add: 'add-circle-outline',
   };
 
   renderer = {

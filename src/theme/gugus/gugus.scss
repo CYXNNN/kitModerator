@@ -1,11 +1,14 @@
 @import "../variables";
 
 :root {
+  --ion-color-primary: yellow;
+  --highlight-color-invalid: green;
 
+  .item-interactive.ion-invalid {
+    --highlight-background: green;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   @import "gugus-dark";
 }
-
-
