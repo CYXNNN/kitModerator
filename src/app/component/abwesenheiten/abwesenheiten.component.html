@@ -1,0 +1,14 @@
+<app-header title="Alle Abwesenheiten" [transcluent]="true"></app-header>
+
+<ion-content id="content" [fullscreen]="true" class="ion-padding">
+  <app-header title="Alle Abwesenheiten" collapse="condense"></app-header>
+
+  <app-abwesenheit-list detailPage="/"></app-abwesenheit-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/children">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

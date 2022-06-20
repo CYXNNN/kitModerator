@@ -1,16 +1,14 @@
 @import "../variables";
 
 :root {
-  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Wingdings', sans-serif;
-  --ion-color-primary: yellow;
-  --test: yellow;
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Comic Sans MS', sans-serif;
+}
 
+@media (prefers-color-scheme: dark) {
+  @import "gugus-dark";
 }
 
 .item-interactive.ion-invalid {
   --highlight-background: var(--ion-color-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  @import "gugus-dark";
-}

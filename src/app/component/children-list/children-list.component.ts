@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
 import {ClientService} from '../../service/client.service';
-import {KitaService} from '../../service/kita.service';
+import {DataService} from '../../service/data.service';
 
 @Component({
   selector: 'app-children-list',
@@ -16,8 +16,8 @@ export class ChildrenListComponent {
 
   children$: Observable<Child[]>;
 
-  constructor(private service: KitaService, private client: ClientService) {
-    this.children$ = this.service.getChildren();
+  constructor(private service: DataService, private client: ClientService) {
+    this.children$ = this.service.children$;
   }
 
   showAvatars = () => this.client.config.settings.avatars;

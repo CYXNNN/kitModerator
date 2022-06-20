@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {AbwesenheitComponent} from './component/abwesenheit/abwesenheit.component';
+import {AbwesenheitenComponent} from './component/abwesenheiten/abwesenheiten.component';
 import {ChildrenComponent} from './component/children/children.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {HomePage} from './component/home/home.page';
@@ -18,6 +19,9 @@ const routes: Routes = [
   }, {
     path: 'abwesenheit/:id',
     component: AbwesenheitComponent,
+  }, {
+    path: 'abwesenheiten',
+    component: AbwesenheitenComponent,
   },
 ];
 

@@ -4,8 +4,9 @@
   <app-header title="Dashboard" collapse="condense"></app-header>
 
   <!-- abwesenheiten section start -->
-  <app-abwesenheit-list></app-abwesenheit-list>
-  <ion-button slot="" routerLink="/children">Abwesenheit melden</ion-button>
+  <app-abwesenheit-list [limit]="3"></app-abwesenheit-list>
+  <ion-button slot="" routerLink="/children">Melden</ion-button>
+  <ion-button slot="" routerLink="/abwesenheiten">Alle</ion-button>
   <!-- abwesenheiten section end -->
 
 </ion-content>
