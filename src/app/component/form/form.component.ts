@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormField} from '../../model/formField';
+import {KitaService} from '../../service/kita.service';
 
 @Component({
   selector: 'app-form',
@@ -23,7 +24,7 @@ export class FormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private rest: KitaService) {
 
   }
 

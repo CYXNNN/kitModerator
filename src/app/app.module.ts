@@ -8,6 +8,7 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
+import {AbwesenheitListComponent} from './component/abwesenheit-list/abwesenheit-list.component';
 import {AbwesenheitComponent} from './component/abwesenheit/abwesenheit.component';
 import {ChildrenListComponent} from './component/children-list/children-list.component';
 import {ChildrenComponent} from './component/children/children.component';
@@ -32,6 +33,7 @@ import {ConfirmDirective} from './directive/confirm.directive';
     ChildrenListComponent,
     FormComponent,
     TextboxComponent,
+    AbwesenheitListComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],

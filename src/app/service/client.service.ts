@@ -16,20 +16,31 @@ export class ClientService {
 
   public selectCustomer(identifier: 'gugus' | 'default'): void {
     this.config = load(identifier);
-    this.setTheme();
+    this.injectTheme();
     console.log('config loaded: ', this.config);
   }
 
-  private setTheme(): void {
+  private injectTheme(): void {
 
     const head = this.document.getElementsByTagName('head')[0];
-    const link = this.document.createElement('link');
+    this.removeTheme();
 
+    const link = this.document.createElement('link');
     link.id = 'theme';
     link.rel = 'stylesheet';
     link.href = `${this.config.identifier}.css`;
 
     head.appendChild(link);
 
+    console.log('theme injected: ', `${this.config.identifier}.css`);
+
+  }
+
+  private removeTheme(): void {
+    const currentTheme = this.document.getElementById('theme');
+
+    if (currentTheme) {
+      currentTheme.remove();
+    }
   }
 }

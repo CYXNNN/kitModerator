@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Abwesenheit} from '../../model/abwesenheit';
 import {ClientService} from '../../service/client.service';
 import {IForm} from '../form/form.interface';
 
@@ -14,7 +15,11 @@ export class AbwesenheitComponent implements IForm {
   }
 
   public submitted(ctx: any): void {
-    console.log('submitted');
+
+    const abwesenheit = ctx.form.value as Abwesenheit;
+    abwesenheit.child =
+
+      ctx.rest.postAbwesenheit(abwesenheit).subscribe();
   }
 
 }

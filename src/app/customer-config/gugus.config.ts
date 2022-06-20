@@ -16,6 +16,6 @@ export class GugusConfig extends Config {
 
   renderer = {
     ...this.renderer,
-    childrenRow: (child: Child) => `${child.lastname} ${child.name}`,
+    childRow: (child: Child) => `${child.lastname} ${child.name}`,
   };
 }

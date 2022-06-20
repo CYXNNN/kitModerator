@@ -14,7 +14,7 @@ export class ChildrenListComponent {
   @Input()
   detailPage = '/children';
 
-  children$: Observable<Child>;
+  children$: Observable<Child[]>;
 
   constructor(private service: KitaService, private client: ClientService) {
     this.children$ = this.service.getChildren();
@@ -22,5 +22,5 @@ export class ChildrenListComponent {
 
   showAvatars = () => this.client.config.settings.avatars;
   icon = () => this.client.config.icons.forward;
-  renderRow = (child: Child) => this.client.config.renderer.childrenRow(child);
+  renderRow = (child: Child) => this.client.config.renderer.childRow(child);
 }

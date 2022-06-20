@@ -1,7 +1,9 @@
+import {Abwesenheit} from '../../model/abwesenheit';
 import {Child} from '../../model/child';
 
 export interface IRenderer {
 
-  childrenRow: (child: Child) => void;
+  childRow: (child: Child) => void;
+  abwesenheitRow: (abwesenheit: Abwesenheit) => void;
 
 }

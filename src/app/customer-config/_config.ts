@@ -1,4 +1,3 @@
-import {Child} from '../model/child';
 import {FormField} from '../model/formField';
 import {IConfig} from './interface/IConfig';
 import {IForms} from './interface/IForms';
@@ -21,13 +20,14 @@ export class Config implements IConfig {
   };
 
   renderer: IRenderer = {
-    childrenRow: (child: Child) => `${child.lastname}`,
+    childRow: child => `${child.lastname}`,
+    abwesenheitRow: abwesenheit => `${abwesenheit.fromDate}: ${abwesenheit.reason}`,
   };
 
   forms: IForms = {
     abwesenheitAdd: [
-      new FormField('from', 'date', ['custom-datepicker']),
-      new FormField('to', 'date', ['custom-datepicker']),
+      new FormField('from', 'datetime', ['custom-datepicker']),
+      new FormField('to', 'datetime', ['custom-datepicker']),
       new FormField('reason'),
       new FormField('comment'),
     ],
