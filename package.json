@@ -71,19 +71,17 @@
   },
   "description": "An Ionic project",
   "jscpd": {
-    "exclude": [
-      "**/node_modules/**",
-      "**/.idea/**"
-    ],
     "ignore": [
-      "**/*.xml"
+      "**/node_modules/**",
+      "**/.idea/**",
+      "**/*.spec.ts"
     ],
     "reporters": [
       "console",
       "html"
     ],
-    "minTokens": 50,
-    "minLines": 5,
+    "minTokens": 30,
+    "minLines": 3,
     "gitignore": true
   },
   "cordova": {
