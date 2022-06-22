@@ -13,7 +13,7 @@ export class HeaderComponent {
   title = '';
 
   @Input()
-  transcluent = false;
+  transcluent = true;
 
   @Input()
   collapse: string | undefined;

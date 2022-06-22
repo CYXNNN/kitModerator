@@ -78,10 +78,14 @@
     ],
     "reporters": [
       "console",
+      "markdown",
+      "xml",
+      "json",
+      "csv",
       "html"
     ],
-    "minTokens": 30,
-    "minLines": 3,
+    "minTokens": 50,
+    "minLines": 5,
     "gitignore": true
   },
   "cordova": {

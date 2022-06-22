@@ -10,7 +10,7 @@ export class Config implements IConfig {
   identifier = 'default';
 
   settings: ISettings = {
-    avatars: false,
+    avatars: true,
     labelStyle: 'floating',
   };
 

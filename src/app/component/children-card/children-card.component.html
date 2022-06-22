@@ -1,10 +1,6 @@
 <ion-card *ngFor="let child of (children$ | async)">
   <ion-item>
-    <ng-container>
-      <ion-avatar slot="start">
-        <img alt="{{child.name}}" src="https://avatars.dicebear.com/api/adventurer/{{child.name}}.svg">
-      </ion-avatar>
-    </ng-container>
+    <app-avatar [name]="child.name"></app-avatar>
     <ion-button fill="outline" slot="end">View</ion-button>
     <ion-card-header>
       <ion-card-title>{{child.name}}</ion-card-title>

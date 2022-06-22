@@ -4,13 +4,7 @@
 
 <ion-list>
   <ion-item *ngFor="let child of (children$ | async)" [button]="true" [routerLink]="[detailPage, child.id]">
-
-    <ng-container *ngIf="showAvatars()">
-      <ion-avatar slot="start">
-        <img alt="{{child.name}}" src="https://avatars.dicebear.com/api/adventurer/{{child.name}}.svg">
-      </ion-avatar>
-    </ng-container>
-
+    <app-avatar [name]="child.name"></app-avatar>
     <ion-label>{{renderRow(child)}}</ion-label>
     <ion-icon name="{{icon()}}"></ion-icon>
   </ion-item>

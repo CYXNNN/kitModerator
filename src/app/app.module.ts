@@ -12,6 +12,7 @@ import {AppComponent} from './app.component';
 import {AbwesenheitListComponent} from './component/abwesenheit-list/abwesenheit-list.component';
 import {AbwesenheitComponent} from './component/abwesenheit/abwesenheit.component';
 import {AbwesenheitenComponent} from './component/abwesenheiten/abwesenheiten.component';
+import {AvatarComponent} from './component/avatar/avatar.component';
 import {ChildrenCardComponent} from './component/children-card/children-card.component';
 import {ChildrenListComponent} from './component/children-list/children-list.component';
 import {ChildrenComponent} from './component/children/children.component';
@@ -39,6 +40,7 @@ import {ConfirmDirective} from './directive/confirm.directive';
     AbwesenheitListComponent,
     AbwesenheitenComponent,
     ChildrenCardComponent,
+    AvatarComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],
