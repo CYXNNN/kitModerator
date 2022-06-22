@@ -10,7 +10,7 @@ const testParams = [
 
 testParams.forEach(p => {
   (identifier => {
-    describe('default config', () => {
+    describe(identifier + ' config', () => {
       const config = load(identifier);
 
       it('identifier should be present', () => {
