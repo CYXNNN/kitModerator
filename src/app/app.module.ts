@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
+import {RouterTestingModule} from '@angular/router/testing';
 
 import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {AppRoutingModule} from './app-routing.module';
@@ -41,7 +42,10 @@ import {ConfirmDirective} from './directive/confirm.directive';
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],
-  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    RouterTestingModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {
