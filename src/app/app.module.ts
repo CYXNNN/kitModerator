@@ -23,6 +23,7 @@ import {HomePage} from './component/home/home.page';
 import {InputComponent} from './component/input/input.component';
 import {TextboxComponent} from './component/textbox/textbox.component';
 import {ConfirmDirective} from './directive/confirm.directive';
+import {TranslatePipe} from './pipes/translate.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {ConfirmDirective} from './directive/confirm.directive';
     AbwesenheitenComponent,
     ChildrenCardComponent,
     AvatarComponent,
+    TranslatePipe
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],

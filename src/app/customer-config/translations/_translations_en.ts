@@ -1,12 +1,12 @@
 import {Translations} from './_translations';
 
-export class TranslationsDe extends Translations {
+export class TranslationsEn extends Translations {
 
   add = 'Hinzufügen';
   delete = 'Löschen';
 
   constructor() {
-    super('de');
+    super('en');
   }
 
 }

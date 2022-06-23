@@ -2,6 +2,7 @@ import {DOCUMENT} from '@angular/common';
 import {Inject, Injectable} from '@angular/core';
 import {Config} from '../customer-config/_config';
 import load from '../customer-config/loader/config.loader';
+import {Translations} from '../customer-config/translations/_translations';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,9 @@ export class ClientService {
   userId: 'parental-identifier';
   config: Config = new Config();
 
+  // FIXME use actual language instead of hardcoded german
+  locale: 'en' | 'de' = 'de';
+
   constructor(@Inject(DOCUMENT) private document: Document) {
   }
 
@@ -18,6 +22,14 @@ export class ClientService {
     this.config = load(identifier);
     this.injectTheme();
     console.log('config loaded: ', this.config);
+  }
+
+  public getTranslations(): Translations {
+    switch (this.locale) {
+      case 'de': return this.config.translations.de;
+      case 'en': return this.config.translations.en;
+      default: return this.config.translations.en;
+    }
   }
 
   private injectTheme(): void {
@@ -35,6 +47,7 @@ export class ClientService {
     console.log('theme injected: ', `${this.config.identifier}.css`);
 
   }
+
 
   private removeTheme(): void {
 
