@@ -22,6 +22,7 @@ export class ClientService {
     this.config = load(identifier);
     this.injectTheme();
     console.log('config loaded: ', this.config);
+    console.log('translations loaded: ', this.getTranslations());
   }
 
   public getTranslations(): Translations {
