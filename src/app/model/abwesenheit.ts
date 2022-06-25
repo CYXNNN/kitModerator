@@ -8,6 +8,6 @@ export class Abwesenheit extends Persistent {
   reason: string;
   comment: string;
 
-  child: Child;
+  children: Child[];
 
 }

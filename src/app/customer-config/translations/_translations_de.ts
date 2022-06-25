@@ -7,6 +7,7 @@ export class TranslationsDe extends Translations {
   reason = 'Grund';
   comment = 'Kommentar';
   submit = 'Absenden';
+  saved = 'Meldung wurde der Kita übergeben';
 
   confirm = {
     title: 'Sind Sie sicher?',

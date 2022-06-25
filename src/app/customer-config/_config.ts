@@ -31,7 +31,7 @@ export class Config implements IConfig {
   renderer: IRenderer = {
     childRow: child => `${child.lastname}`,
     childSelect: child => `${child.name} ${child.lastname}`,
-    abwesenheitRow: abwesenheit => `${abwesenheit.child.name}: ${abwesenheit.reason}`,
+    abwesenheitRow: abwesenheit => `${abwesenheit.reason}`,
   };
 
   forms: IForms = {

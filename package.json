@@ -84,8 +84,8 @@
       "csv",
       "html"
     ],
-    "minTokens": 50,
-    "minLines": 5,
+    "minTokens": 40,
+    "minLines": 2,
     "gitignore": true
   },
   "cordova": {

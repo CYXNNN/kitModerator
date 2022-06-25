@@ -1,5 +1,5 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import {AlertController} from '@ionic/angular';
+import {AlertController, ToastController} from '@ionic/angular';
 import {TranslatePipe} from '../pipes/translate.pipe';
 
 @Directive({
@@ -29,7 +29,12 @@ export class ConfirmDirective {
   @Input()
   cancelKey = 'confirm.no';
 
-  constructor(private el: ElementRef, private alertController: AlertController, private translate: TranslatePipe) {
+  constructor(
+    private el: ElementRef,
+    private alertController: AlertController,
+    private translate: TranslatePipe,
+    private toaster: ToastController,
+  ) {
   }
 
   /**
