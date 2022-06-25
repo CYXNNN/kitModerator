@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item>
+    <ion-select placeholder="{{'children.select.placeholder' | translate}}"
+                [multiple]="multiple"
+                (ionChange)="change($event)">
+      <ion-select-option *ngFor="let child of (children$ | async)" value="{{child.id}}">
+        {{render(child)}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>

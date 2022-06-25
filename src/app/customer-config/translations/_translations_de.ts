@@ -2,6 +2,19 @@ import {Translations} from './_translations';
 
 export class TranslationsDe extends Translations {
 
+  from = 'Von';
+  to = 'Bis';
+  reason = 'Grund';
+  comment = 'Kommentar';
+  submit = 'Absenden';
+
+  confirm = {
+    title: 'Sind Sie sicher?',
+    body: 'Diese Aktion kann nicht rückgängig gemacht werden',
+    yes: 'Bestätigen',
+    no: 'Abbrechen',
+  };
+
   button = {
     add: 'Hinzufügen',
     all: 'Alle',
@@ -11,14 +24,22 @@ export class TranslationsDe extends Translations {
 
   children = {
     title: 'Kinder',
+
+    select: {
+      placeholder: 'Kind(er) auswählen',
+    },
   };
 
   dashboard = {
     title: 'Dashboard',
+    welcome: 'Hallo Guten Tag.',
   };
 
   abwesenheiten = {
     title: 'Abwesenheiten',
+    form: {
+      notice: 'Füllen Sie das Formular vollständig aus',
+    },
   };
 
   constructor() {

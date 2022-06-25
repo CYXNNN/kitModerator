@@ -1,5 +1,6 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 import {AlertController} from '@ionic/angular';
+import {TranslatePipe} from '../pipes/translate.pipe';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
@@ -17,18 +18,18 @@ export class ConfirmDirective {
   cancel: (ctx: any) => void;
 
   @Input()
-  titleKey = 'Sind Sie sicher?';
+  titleKey = 'confirm.title';
 
   @Input()
-  messageKey = 'Dies tut etwas...';
+  messageKey = 'confirm.body';
 
   @Input()
-  confirmKey = 'Bestätigen';
+  confirmKey = 'confirm.yes';
 
   @Input()
-  cancelKey = 'Abbrechen';
+  cancelKey = 'confirm.no';
 
-  constructor(private el: ElementRef, private alertController: AlertController) {
+  constructor(private el: ElementRef, private alertController: AlertController, private translate: TranslatePipe) {
   }
 
   /**
@@ -37,17 +38,17 @@ export class ConfirmDirective {
    */
   @HostListener('click') show(): void {
     this.alertController.create({
-      header: this.titleKey,
-      message: this.messageKey,
+      header: this.translate.transform(this.titleKey),
+      message: this.translate.transform(this.messageKey),
       buttons: [
         {
-          text: this.cancelKey,
+          text: this.translate.transform(this.cancelKey),
           role: 'cancel',
           handler: () => {
             this.cancel(this.ctx);
           },
         }, {
-          text: this.confirmKey,
+          text: this.translate.transform(this.confirmKey),
           handler: () => {
             this.confirm(this.ctx);
           },

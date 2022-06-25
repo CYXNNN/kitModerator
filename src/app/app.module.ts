@@ -15,6 +15,7 @@ import {AbwesenheitenComponent} from './component/abwesenheiten/abwesenheiten.co
 import {AvatarComponent} from './component/avatar/avatar.component';
 import {ChildrenCardComponent} from './component/children-card/children-card.component';
 import {ChildrenListComponent} from './component/children-list/children-list.component';
+import {ChildrenSelectComponent} from './component/children-select/children-select.component';
 import {ChildrenComponent} from './component/children/children.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {FormComponent} from './component/form/form.component';
@@ -42,13 +43,15 @@ import {TranslatePipe} from './pipes/translate.pipe';
     AbwesenheitenComponent,
     ChildrenCardComponent,
     AvatarComponent,
-    TranslatePipe
+    TranslatePipe,
+    ChildrenSelectComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   providers: [
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     RouterTestingModule,
+    TranslatePipe,
   ],
   bootstrap: [AppComponent],
 })

@@ -11,9 +11,8 @@
                 [confirm]="confirmed"
                 [cancel]="cancelled"
                 [ctx]="this">
-      Submit
+      {{'submit' | translate}}
     </ion-button>
-
   </ng-container>
 </form>
 
@@ -22,6 +21,6 @@
               color="primary"
               expand="block"
               (click)="submitted(this)">
-    Submit
+    {{'submit' | translate}}
   </ion-button>
 </ng-template>

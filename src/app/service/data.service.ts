@@ -5,6 +5,7 @@ import {environment} from '../../environments/environment';
 import {Abwesenheit} from '../model/abwesenheit';
 import {Child} from '../model/child';
 import {Kita} from '../model/kita';
+import {StateService} from './state.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,9 @@ export class DataService {
   children$ = new BehaviorSubject<Child[]>([]);
   abwesenheiten$ = new BehaviorSubject<Abwesenheit[]>([]);
 
-  constructor(private http: HttpClient) {
+  selectedChild: string | undefined = undefined;
+
+  constructor(private http: HttpClient, private state: StateService) {
   }
 
   public loadData(): void {
@@ -25,8 +28,12 @@ export class DataService {
   }
 
   public postAbwesenheit(abwesenheit: Abwesenheit): void {
-    this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, abwesenheit)
+    this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, {...abwesenheit, childId: this.state.selectedChildren})
       .subscribe(res => this.abwesenheiten$.next([...this.abwesenheiten$.value, res]));
+  }
+
+  public selectChild(child: string | undefined) {
+    this.selectedChild = child;
   }
 
   private loadAbwesenheiten(): void {
@@ -36,7 +43,8 @@ export class DataService {
 
   private loadChildren(): void {
     this.http.get<Child[]>(`${this.api}/child/all`)
-      .subscribe(res => this.children$.next(res));
+      .subscribe(res => this.children$.next(res),
+        error => console.log(error));
   }
 
   private loadKita(identifier: string): Observable<Kita> {

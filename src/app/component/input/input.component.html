@@ -1,6 +1,6 @@
 <div [formGroup]="form">
 
-  <ion-label position="{{labelStyle()}}">{{field.key}}</ion-label>
+  <ion-label position="{{labelStyle()}}">{{field.key | translate}}</ion-label>
   <ion-input [type]="field.type"
              [formControlName]="field.key"
              [ngClass]="field.cls"

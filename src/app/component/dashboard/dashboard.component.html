@@ -2,12 +2,15 @@
 
 <ion-content id="content" [fullscreen]="true" class="ion-padding">
 
+  <app-textbox key="dashboard.welcome"></app-textbox>
+  <app-children-select [multiple]="true"></app-children-select>
+
   <!-- children section start -->
   <app-children-card></app-children-card>
   <!-- children section end -->
 
   <!-- abwesenheiten section start -->
-  <app-abwesenheit-list [limit]="3"></app-abwesenheit-list>
+  <app-abwesenheit-list limit="3"></app-abwesenheit-list>
   <ion-button routerLink="/children">
     <ion-icon [name]="add()"></ion-icon>
     {{'button.add' | translate}}

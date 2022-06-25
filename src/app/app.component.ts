@@ -9,6 +9,7 @@ import {DataService} from './service/data.service';
 export class AppComponent {
 
   constructor(private dataService: DataService) {
+    console.log('AppComponent.constructor');
     this.dataService.loadData();
   }
 
