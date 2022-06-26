@@ -1,0 +1,8 @@
+<div [formGroup]="form">
+
+  <ion-label position="{{labelStyle()}}">{{field.key | translate}}</ion-label>
+  <ion-textarea
+    [formControlName]="field.key"
+    [ngClass]="field.cls"
+    [value]="getControl(field.key).value"></ion-textarea>
+</div>

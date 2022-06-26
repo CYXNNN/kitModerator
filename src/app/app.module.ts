@@ -22,6 +22,7 @@ import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {FormComponent} from './component/form/form.component';
 import {HeaderComponent} from './component/header/header.component';
 import {HomePage} from './component/home/home.page';
+import {InputTextareaComponent} from './component/input-textarea/input-textarea.component';
 import {InputComponent} from './component/input/input.component';
 import {TextboxComponent} from './component/textbox/textbox.component';
 import {ConfirmDirective} from './directive/confirm.directive';
@@ -47,6 +48,7 @@ import {TranslatePipe} from './pipes/translate.pipe';
     TranslatePipe,
     ChildrenSelectComponent,
     CustomerInfoComponent,
+    InputTextareaComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],

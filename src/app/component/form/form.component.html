@@ -4,6 +4,7 @@
 
     <ng-container [ngSwitch]="field.type">
       <app-children-select [field]="field" [form]="form" *ngSwitchCase="'children-select'"></app-children-select>
+      <app-input-textarea *ngSwitchCase="'textarea'" [field]="field" [form]="form"></app-input-textarea>
       <app-input *ngSwitchDefault [field]="field" [form]="form"></app-input>
     </ng-container>
 

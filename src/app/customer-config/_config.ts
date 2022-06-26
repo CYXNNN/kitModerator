@@ -40,7 +40,7 @@ export class Config implements IConfig {
       new FormField('fromDate', 'datetime-local'),
       new FormField('toDate', 'datetime-local'),
       new FormField('reason'),
-      new FormField('comment', 'text', []),
+      new FormField('comment', 'textarea', []),
     ],
   };
 }
