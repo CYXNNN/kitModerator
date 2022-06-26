@@ -49,7 +49,7 @@ export class AbwesenheitComponent implements IConfirmableForm, OnInit {
       return;
     }
 
-    if (abwesenheit.id) {
+    if (this.toPatch) {
       // TODO PUT
     } else {
       ctx.rest.postAbwesenheit(abwesenheit, this.toaster.create({

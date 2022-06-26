@@ -2,8 +2,8 @@ import {Translations} from './_translations';
 
 export class TranslationsDe extends Translations {
 
-  from = 'Von';
-  to = 'Bis';
+  fromDate = 'Von';
+  toDate = 'Bis';
   reason = 'Grund';
   comment = 'Kommentar';
   submit = 'Absenden';

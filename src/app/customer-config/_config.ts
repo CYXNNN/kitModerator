@@ -36,11 +36,11 @@ export class Config implements IConfig {
 
   forms: IForms = {
     abwesenheitAdd: [
-      new FormField('childrenIds', 'children-select'),
-      new FormField('from', 'datetime-local', ['custom-datepicker']),
-      new FormField('to', 'datetime-local', ['custom-datepicker']),
+      new FormField('children', 'children-select'),
+      new FormField('fromDate', 'datetime-local'),
+      new FormField('toDate', 'datetime-local'),
       new FormField('reason'),
-      new FormField('comment'),
+      new FormField('comment', 'text', []),
     ],
   };
 }

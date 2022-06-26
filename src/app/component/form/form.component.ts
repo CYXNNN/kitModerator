@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {AlertController} from '@ionic/angular';
 import {FormField} from '../../model/formField';
 import {TranslatePipe} from '../../pipes/translate.pipe';
@@ -44,7 +44,7 @@ export class FormComponent implements OnInit {
 
     // fill form with fields defined in customer config
     this.getKeys().forEach(field => {
-      this.form.addControl(field.key, new FormControl(null, Validators.required));
+      this.form.addControl(field.key, new FormControl(null, field.validators));
     });
 
     this.form.patchValue(this.toPatch);
