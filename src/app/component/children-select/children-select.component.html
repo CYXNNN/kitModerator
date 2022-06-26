@@ -1,11 +1,9 @@
-<ion-list>
-  <ion-item>
-    <ion-select placeholder="{{'children.select.placeholder' | translate}}"
-                [multiple]="multiple"
-                (ionChange)="change($event)">
-      <ion-select-option *ngFor="let child of (children$ | async)" value="{{child.id}}">
-        {{render(child)}}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
+<div [formGroup]="form">
+  <ion-label position="floating">{{'children.select.placeholder' | translate}}</ion-label>
+  <ion-select [formControlName]="field.key"
+              [multiple]="multiple">
+    <ion-select-option *ngFor="let child of (children$ | async)" value="{{child.id}}">
+      {{render(child)}}
+    </ion-select-option>
+  </ion-select>
+</div>

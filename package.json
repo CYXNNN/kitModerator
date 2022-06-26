@@ -9,6 +9,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "complexity": "./node_modules/.bin/es6-plato -r -d ./report-complexity src",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -53,6 +54,7 @@
     "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
+    "es6-plato": "^1.2.3",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",

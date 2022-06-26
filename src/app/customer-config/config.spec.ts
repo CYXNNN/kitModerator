@@ -25,7 +25,7 @@ testParams.forEach(p => {
     });
 
     it('renderer should be present', () => {
-      expect(Object.keys(config.renderer).length).toBe(2);
+      expect(Object.keys(config.renderer).length).toBe(3);
     });
 
     it('forms should be present', () => {

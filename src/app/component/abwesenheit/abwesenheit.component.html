@@ -5,6 +5,7 @@
   <app-textbox key="abwesenheiten.form.notice"></app-textbox>
 
   <app-form [config]="client.config.forms.abwesenheitAdd"
+            [toPatch]="toPatch"
             [cancelled]="cancelled"
             [confirmed]="confirmed"></app-form>
 

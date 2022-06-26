@@ -2,6 +2,7 @@
 
   <ion-label position="{{labelStyle()}}">{{field.key | translate}}</ion-label>
   <ion-input [type]="field.type"
+             placeholder=""
              [formControlName]="field.key"
              [ngClass]="field.cls"
              [value]="getControl(field.key).value"></ion-input>

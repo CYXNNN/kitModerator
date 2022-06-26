@@ -4,7 +4,6 @@ import {BehaviorSubject} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {Abwesenheit} from '../model/abwesenheit';
 import {Child} from '../model/child';
-import {StateService} from './state.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +15,7 @@ export class DataService {
   children$ = new BehaviorSubject<Child[]>([]);
   abwesenheiten$ = new BehaviorSubject<Abwesenheit[]>([]);
 
-  constructor(private http: HttpClient, private state: StateService) {
+  constructor(private http: HttpClient) {
   }
 
   public loadData(): void {
@@ -25,7 +24,7 @@ export class DataService {
   }
 
   public postAbwesenheit(abwesenheit: Abwesenheit, toaster: Promise<HTMLIonToastElement>): void {
-    this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, {...abwesenheit, childrenIds: this.state.selectedChildren})
+    this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, abwesenheit)
       .subscribe(res => {
         this.abwesenheiten$.next([...this.abwesenheiten$.value, res]);
         toaster.then(t => t.present());

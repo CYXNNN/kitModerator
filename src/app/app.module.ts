@@ -17,6 +17,7 @@ import {ChildrenCardComponent} from './component/children-card/children-card.com
 import {ChildrenListComponent} from './component/children-list/children-list.component';
 import {ChildrenSelectComponent} from './component/children-select/children-select.component';
 import {ChildrenComponent} from './component/children/children.component';
+import {CustomerInfoComponent} from './component/customer-info/customer-info.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {FormComponent} from './component/form/form.component';
 import {HeaderComponent} from './component/header/header.component';
@@ -45,6 +46,7 @@ import {TranslatePipe} from './pipes/translate.pipe';
     AvatarComponent,
     TranslatePipe,
     ChildrenSelectComponent,
+    CustomerInfoComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],

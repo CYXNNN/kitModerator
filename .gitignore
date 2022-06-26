@@ -31,5 +31,6 @@ npm-debug.log*
 /plugins
 /www
 /report
+/report-complexity
 /resources
 config.xml

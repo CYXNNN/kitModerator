@@ -1,9 +1,10 @@
 import {Component, Input} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
+import {FormField} from '../../model/formField';
 import {ClientService} from '../../service/client.service';
 import {DataService} from '../../service/data.service';
-import {StateService} from '../../service/state.service';
 
 @Component({
   selector: 'app-children-select',
@@ -13,16 +14,18 @@ import {StateService} from '../../service/state.service';
 export class ChildrenSelectComponent {
 
   @Input()
-  multiple = false;
+  multiple = true;
+
+  @Input()
+  field: FormField;
+
+  @Input()
+  form: FormGroup;
 
   children$: Observable<Child[]>;
 
-  constructor(private data: DataService, private client: ClientService, private state: StateService) {
+  constructor(private data: DataService, private client: ClientService) {
     this.children$ = this.data.children$;
-  }
-
-  change(event: any): void {
-    this.state.selectedChildren = event.detail.value;
   }
 
   render = child => this.client.config.renderer.childSelect(child);

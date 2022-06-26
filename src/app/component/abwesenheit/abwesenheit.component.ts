@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {ToastController} from '@ionic/angular';
+import {map} from 'rxjs/operators';
 import {Abwesenheit} from '../../model/abwesenheit';
 import {TranslatePipe} from '../../pipes/translate.pipe';
 import {ClientService} from '../../service/client.service';
@@ -11,28 +13,50 @@ import {IConfirmableForm} from '../form/confirmable-form.interface';
   templateUrl: './abwesenheit.component.html',
   styleUrls: ['./abwesenheit.component.scss'],
 })
-export class AbwesenheitComponent implements IConfirmableForm {
+export class AbwesenheitComponent implements IConfirmableForm, OnInit {
 
-  childId: string;
+  toPatch: Abwesenheit;
 
   constructor(
     private client: ClientService,
     private data: DataService,
     private toaster: ToastController,
     private translate: TranslatePipe,
+    private route: ActivatedRoute,
   ) {
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = params.id;
+
+      if (!id) {
+        return;
+      }
+
+      this.data.abwesenheiten$.pipe(
+        map(arr => arr.filter(a => a.id === id)),
+      ).subscribe(next => this.toPatch = next[0]);
+
+    });
   }
 
   public confirmed(ctx: any): void {
 
     const abwesenheit = ctx.form.value as Abwesenheit;
 
-    debugger;
+    if (!ctx.isValid()) {
+      return;
+    }
 
-    ctx.rest.postAbwesenheit(abwesenheit, this.toaster.create({
-      message: this.translate.transform('saved'),
-      duration: 2000,
-    }));
+    if (abwesenheit.id) {
+      // TODO PUT
+    } else {
+      ctx.rest.postAbwesenheit(abwesenheit, this.toaster.create({
+        message: this.translate.transform('saved'),
+        duration: 2000,
+      }));
+    }
   }
 
   public cancelled(ctx: any): void {

@@ -9,6 +9,13 @@ export class TranslationsDe extends Translations {
   submit = 'Absenden';
   saved = 'Meldung wurde der Kita übergeben';
 
+  form = {
+    invalid: {
+      title: 'Formular unvollständig',
+      body: 'Bitte überprüfen Sie Ihre Eingaben.',
+    },
+  };
+
   confirm = {
     title: 'Sind Sie sicher?',
     body: 'Diese Aktion kann nicht rückgängig gemacht werden',
