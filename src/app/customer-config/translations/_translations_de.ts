@@ -6,7 +6,6 @@ export class TranslationsDe extends Translations {
   toDate = 'Bis';
   reason = 'Grund';
   comment = 'Kommentar';
-  submit = 'Absenden';
 
   crud = {
     created: 'Meldung wurde der Kita übergeben',
@@ -19,6 +18,8 @@ export class TranslationsDe extends Translations {
       title: 'Formular unvollständig',
       body: 'Bitte überprüfen Sie Ihre Eingaben.',
     },
+    submit: 'Absenden',
+    delete: 'Löschen',
   };
 
   confirm = {

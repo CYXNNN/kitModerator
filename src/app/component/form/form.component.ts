@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {AlertController} from '@ionic/angular';
 import {FormField} from '../../model/formField';
+import {Persistent} from '../../model/persistent';
 import {TranslatePipe} from '../../pipes/translate.pipe';
 import {StateService} from '../../service/state.service';
 
@@ -16,7 +17,7 @@ export class FormComponent implements OnInit {
   config: FormField[];
 
   @Input()
-  toPatch: any;
+  toPatch: Persistent;
 
   @Input()
   confirmed: (ctx: any) => void;
@@ -51,7 +52,6 @@ export class FormComponent implements OnInit {
   }
 
   getKeys = () => this.config;
-  confirmDialog = () => this.confirmed && this.cancelled;
   isValid = () => {
     const valid = this.form.valid;
 

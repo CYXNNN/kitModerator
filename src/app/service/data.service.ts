@@ -19,6 +19,14 @@ export class DataService {
     return this.http.post<Abwesenheit>(`${this.api}/abwesenheit/`, abwesenheit);
   }
 
+  public putAbwesenheit(abwesenheit: Abwesenheit): Observable<Abwesenheit> {
+    return this.http.put<Abwesenheit>(`${this.api}/abwesenheit/`, abwesenheit);
+  }
+
+  public deleteAbwesenheit(abwesenheit: Abwesenheit): Observable<Abwesenheit> {
+    return this.http.delete<Abwesenheit>(`${this.api}/abwesenheit/${abwesenheit.id}`);
+  }
+
   public loadAbwesenheiten(): Observable<Abwesenheit[]> {
     return this.http.get<Abwesenheit[]>(`${this.api}/abwesenheit/all`);
   }

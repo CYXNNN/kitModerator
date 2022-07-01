@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="submitted(this)">
 
   <ion-item *ngFor="let field of getKeys()" lines="full">
 
@@ -9,24 +9,19 @@
     </ng-container>
 
   </ion-item>
-
-  <ng-container *ngIf="confirmDialog(); else submitOnly">
+  <ion-footer>
     <ion-button type="submit"
-                color="primary"
-                expand="block"
+                color="primary">
+      {{'form.submit' | translate}}
+    </ion-button>
+
+    <ion-button color="danger"
                 [confirm]="confirmed"
                 [cancel]="cancelled"
                 [ctx]="this">
-      {{'submit' | translate}}
+      {{'form.delete' | translate}}
     </ion-button>
-  </ng-container>
+  </ion-footer>
 </form>
 
-<ng-template #submitOnly>
-  <ion-button type="submit"
-              color="primary"
-              expand="block"
-              (click)="submitted(this)">
-    {{'submit' | translate}}
-  </ion-button>
-</ng-template>
+
