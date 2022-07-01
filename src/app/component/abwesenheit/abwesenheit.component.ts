@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {Abwesenheit} from '../../model/abwesenheit';
 import {TranslatePipe} from '../../pipes/translate.pipe';
 import {ClientService} from '../../service/client.service';
-import {DataService} from '../../service/data.service';
+import {StateService} from '../../service/state.service';
 import {IConfirmableForm} from '../form/confirmable-form.interface';
 
 @Component({
@@ -19,7 +19,7 @@ export class AbwesenheitComponent implements IConfirmableForm, OnInit {
 
   constructor(
     private client: ClientService,
-    private data: DataService,
+    private state: StateService,
     private toaster: ToastController,
     private translate: TranslatePipe,
     private route: ActivatedRoute,
@@ -34,7 +34,7 @@ export class AbwesenheitComponent implements IConfirmableForm, OnInit {
         return;
       }
 
-      this.data.abwesenheiten$.pipe(
+      this.state.abwesenheiten$.pipe(
         map(arr => arr.filter(a => a.id === id)),
       ).subscribe(next => this.toPatch = next[0]);
 
@@ -52,10 +52,7 @@ export class AbwesenheitComponent implements IConfirmableForm, OnInit {
     if (this.toPatch) {
       // TODO PUT
     } else {
-      ctx.rest.postAbwesenheit(abwesenheit, this.toaster.create({
-        message: this.translate.transform('saved'),
-        duration: 2000,
-      }));
+      ctx.state.post(abwesenheit);
     }
   }
 

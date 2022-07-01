@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Abwesenheit} from '../../model/abwesenheit';
 import {ClientService} from '../../service/client.service';
-import {DataService} from '../../service/data.service';
+import {StateService} from '../../service/state.service';
 
 @Component({
   selector: 'app-abwesenheit-list',
@@ -20,10 +20,10 @@ export class AbwesenheitListComponent {
 
   abwesenheiten$: Observable<Abwesenheit[]>;
 
-  constructor(private service: DataService, private client: ClientService) {
+  constructor(private state: StateService, private client: ClientService) {
 
     // prepare data
-    this.abwesenheiten$ = this.service.abwesenheiten$.pipe(
+    this.abwesenheiten$ = this.state.abwesenheiten$.pipe(
       map(x => x.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())),
       map(x => x.slice(0, this.limit)),
     );

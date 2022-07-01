@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
 import {FormField} from '../../model/formField';
 import {ClientService} from '../../service/client.service';
-import {DataService} from '../../service/data.service';
+import {StateService} from '../../service/state.service';
 
 @Component({
   selector: 'app-children-select',
@@ -24,8 +24,8 @@ export class ChildrenSelectComponent {
 
   children$: Observable<Child[]>;
 
-  constructor(private data: DataService, private client: ClientService) {
-    this.children$ = this.data.children$;
+  constructor(private state: StateService, private client: ClientService) {
+    this.children$ = this.state.children$;
   }
 
   render = child => this.client.config.renderer.childSelect(child);

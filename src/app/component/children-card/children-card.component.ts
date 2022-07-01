@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
-import {DataService} from '../../service/data.service';
+import {StateService} from '../../service/state.service';
 
 @Component({
   selector: 'app-children-card',
@@ -12,8 +12,8 @@ export class ChildrenCardComponent {
 
   children$: Observable<Child[]>;
 
-  constructor(private data: DataService) {
-    this.children$ = data.children$;
+  constructor(private state: StateService) {
+    this.children$ = state.children$;
   }
 
 }

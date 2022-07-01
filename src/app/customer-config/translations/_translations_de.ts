@@ -7,7 +7,12 @@ export class TranslationsDe extends Translations {
   reason = 'Grund';
   comment = 'Kommentar';
   submit = 'Absenden';
-  saved = 'Meldung wurde der Kita übergeben';
+
+  crud = {
+    created: 'Meldung wurde der Kita übergeben',
+    updated: 'Änderungen wurden gespeichert',
+    deleted: 'Eintrag wurde gelöscht',
+  };
 
   form = {
     invalid: {

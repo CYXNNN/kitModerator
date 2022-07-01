@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Child} from '../../model/child';
 import {ClientService} from '../../service/client.service';
-import {DataService} from '../../service/data.service';
+import {StateService} from '../../service/state.service';
 
 @Component({
   selector: 'app-children-list',
@@ -16,8 +16,8 @@ export class ChildrenListComponent {
 
   children$: Observable<Child[]>;
 
-  constructor(private service: DataService, private client: ClientService) {
-    this.children$ = this.service.children$;
+  constructor(private state: StateService, private client: ClientService) {
+    this.children$ = this.state.children$;
   }
 
   icon = () => this.client.config.icons.forward;

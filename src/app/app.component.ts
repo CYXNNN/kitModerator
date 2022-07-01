@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DataService} from './service/data.service';
+import {StateService} from './service/state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import {DataService} from './service/data.service';
 })
 export class AppComponent {
 
-  constructor(private dataService: DataService) {
+  constructor(private state: StateService) {
     console.log('AppComponent.constructor');
-    this.dataService.loadData();
+    this.state.init();
   }
 
 }

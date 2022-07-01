@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {AlertController} from '@ionic/angular';
 import {FormField} from '../../model/formField';
 import {TranslatePipe} from '../../pipes/translate.pipe';
-import {DataService} from '../../service/data.service';
+import {StateService} from '../../service/state.service';
 
 @Component({
   selector: 'app-form',
@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private rest: DataService,
+    private state: StateService,
     private alert: AlertController,
     private translate: TranslatePipe,
   ) {
