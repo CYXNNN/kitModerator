@@ -49,10 +49,10 @@ export class AbwesenheitComponent implements IConfirmableForm, OnInit {
       return;
     }
 
-    if (this.toPatch) {
-      // TODO PUT
-    } else {
+    if (abwesenheit.isNew()) {
       ctx.state.post(abwesenheit);
+    } else {
+      // TODO PUT
     }
   }
 

@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import {ClientService} from '../../service/client.service';
 
 @Component({
   selector: 'app-abwesenheiten',
@@ -7,4 +8,7 @@ import {Component} from '@angular/core';
 })
 export class AbwesenheitenComponent {
 
+  constructor(private client: ClientService) { }
+
+  icon = () => this.client.config.icons.add;
 }
