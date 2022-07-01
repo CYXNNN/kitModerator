@@ -57,6 +57,7 @@ export class AbwesenheitComponent implements IConfirmableForm, OnInit {
   }
 
   public cancelled(ctx: any): void {
+    console.log('cancelled');
   }
 
 }
