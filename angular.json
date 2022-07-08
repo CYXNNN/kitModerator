@@ -42,6 +42,11 @@
                 "input": "src/theme/gugus/gugus.scss",
                 "bundleName": "gugus",
                 "inject": false
+              },
+              {
+                "input": "src/theme/alpha/alpha.scss",
+                "bundleName": "alpha",
+                "inject": false
               }
 
             ],

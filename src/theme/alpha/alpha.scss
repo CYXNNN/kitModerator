@@ -1,0 +1,14 @@
+@import "../variables";
+
+:root {
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Comic Sans MS', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  @import "alpha-dark";
+}
+
+.item-interactive.ion-invalid {
+  --highlight-background: var(--ion-color-primary);
+}
+
