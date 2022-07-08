@@ -52,6 +52,11 @@
                 "input": "src/theme/beta/beta.scss",
                 "bundleName": "beta",
                 "inject": false
+              },
+              {
+                "input": "src/theme/gamma/gamma.scss",
+                "bundleName": "gamma",
+                "inject": false
               }
 
             ],
