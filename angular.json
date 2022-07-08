@@ -47,6 +47,11 @@
                 "input": "src/theme/alpha/alpha.scss",
                 "bundleName": "alpha",
                 "inject": false
+              },
+              {
+                "input": "src/theme/beta/beta.scss",
+                "bundleName": "beta",
+                "inject": false
               }
 
             ],
