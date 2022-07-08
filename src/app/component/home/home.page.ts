@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ClientService} from '../../service/client.service';
+import {ClientService, Customers} from '../../service/client.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomePage {
   constructor(private clientService: ClientService) {
   }
 
-  select = (key: 'gugus' | 'default') => {
+  select = (key: Customers) => {
     this.clientService.selectCustomer(key);
   };
 }

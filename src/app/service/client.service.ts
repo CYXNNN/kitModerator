@@ -4,6 +4,20 @@ import {Config} from '../customer-config/_config';
 import load from '../customer-config/loader/config.loader';
 import {Translations} from '../customer-config/translations/_translations';
 
+export type Customers =
+  'default'
+  | 'gugus'
+  | 'alpha'
+  | 'beta'
+  | 'gamma'
+  | 'delta'
+  | 'epsilon'
+  | 'zeta'
+  | 'eta'
+  | 'theta'
+  | 'iota'
+  | 'kappa';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -18,7 +32,7 @@ export class ClientService {
   constructor(@Inject(DOCUMENT) private document: Document) {
   }
 
-  public selectCustomer(identifier: 'gugus' | 'default'): void {
+  public selectCustomer(identifier: Customers): void {
     this.config = load(identifier);
     this.injectTheme();
     console.log('config loaded: ', this.config);
@@ -28,9 +42,12 @@ export class ClientService {
   public getTranslations(): Translations {
     switch (this.locale) {
 
-      case 'de': return this.config.translations.de;
-      case 'en': return this.config.translations.en;
-      default: return this.config.translations.en;
+      case 'de':
+        return this.config.translations.de;
+      case 'en':
+        return this.config.translations.en;
+      default:
+        return this.config.translations.en;
     }
   }
 
@@ -49,7 +66,6 @@ export class ClientService {
     console.log('theme injected: ', `${this.config.identifier}.css`);
 
   }
-
 
   private removeTheme(): void {
 
