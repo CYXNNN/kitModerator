@@ -1,4 +1,5 @@
 import {Abwesenheit} from '../model/abwesenheit';
+import {Child} from '../model/child';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {GammaTranslations} from './translations/gamma/gamma.translations';
@@ -22,5 +23,6 @@ export class GammaConfig extends Config {
   renderer = {
     ...this.renderer,
     abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.fromDate} ${abwesenheit.toDate} ${abwesenheit.reason}`,
+    childRow: (child: Child) => `${child.lastname} ${child.name}`,
   };
 }
