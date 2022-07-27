@@ -77,6 +77,11 @@
                 "input": "src/theme/eta/eta.scss",
                 "bundleName": "eta",
                 "inject": false
+              },
+              {
+                "input": "src/theme/theta/theta.scss",
+                "bundleName": "theta",
+                "inject": false
               }
 
             ],

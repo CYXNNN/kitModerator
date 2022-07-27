@@ -6,6 +6,7 @@ import {EpsilonConfig} from '../epsilon.config';
 import {EtaConfig} from '../eta.config';
 import {GammaConfig} from '../gamma.config';
 import {GugusConfig} from '../gugus.config';
+import {ThetaConfig} from '../theta.config';
 import {ZetaConfig} from '../zeta.config';
 
 export default (identifier: string) => {
@@ -27,6 +28,8 @@ export default (identifier: string) => {
       return new ZetaConfig();
     case 'eta':
       return new EtaConfig();
+    case 'theta':
+      return new ThetaConfig();
     default:
       return new Config();
   }
