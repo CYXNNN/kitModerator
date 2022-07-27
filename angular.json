@@ -87,6 +87,11 @@
                 "input": "src/theme/iota/iota.scss",
                 "bundleName": "iota",
                 "inject": false
+              },
+              {
+                "input": "src/theme/kappa/kappa.scss",
+                "bundleName": "kappa",
+                "inject": false
               }
 
             ],

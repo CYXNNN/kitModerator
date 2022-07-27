@@ -7,6 +7,7 @@ import {EtaConfig} from '../eta.config';
 import {GammaConfig} from '../gamma.config';
 import {GugusConfig} from '../gugus.config';
 import {IotaConfig} from '../iota.config';
+import {KappaConfig} from '../kappa.config';
 import {ThetaConfig} from '../theta.config';
 import {ZetaConfig} from '../zeta.config';
 
@@ -33,6 +34,8 @@ export default (identifier: string) => {
       return new ThetaConfig();
     case 'iota':
       return new IotaConfig();
+    case 'kappa':
+      return new KappaConfig();
     default:
       return new Config();
   }
