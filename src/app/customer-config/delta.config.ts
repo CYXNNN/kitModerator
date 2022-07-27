@@ -1,3 +1,4 @@
+import {Abwesenheit} from '../model/abwesenheit';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {DeltaTranslations} from './translations/delta/delta.translations';
@@ -16,6 +17,11 @@ export class DeltaConfig extends Config {
       new FormField('reason'),
       new FormField('comment', 'textarea', []),
     ],
+  };
+
+  renderer = {
+    ...this.renderer,
+    abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.fromDate} ${abwesenheit.reason}  ${abwesenheit.toDate}`,
   };
 
 }
