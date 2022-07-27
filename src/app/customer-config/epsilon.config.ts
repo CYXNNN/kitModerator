@@ -1,3 +1,4 @@
+import {Abwesenheit} from '../model/abwesenheit';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {EpsilonTranslations} from './translations/epsilon/epsilon.translations';
@@ -16,5 +17,10 @@ export class EpsilonConfig extends Config {
       new FormField('reason'),
       new FormField('comment', 'textarea', []),
     ],
+  };
+
+  renderer = {
+    ...this.renderer,
+    abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.toDate} ${abwesenheit.reason} ${abwesenheit.fromDate}`,
   };
 }
