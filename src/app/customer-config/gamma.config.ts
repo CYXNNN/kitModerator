@@ -24,5 +24,6 @@ export class GammaConfig extends Config {
     ...this.renderer,
     abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.fromDate} ${abwesenheit.toDate} ${abwesenheit.reason}`,
     childRow: (child: Child) => `${child.lastname} ${child.name}`,
+    childSelect: (child: Child) => `${child.lastname} ${child.name}`,
   };
 }
