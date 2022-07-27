@@ -4,18 +4,13 @@ import {IForms} from './interface/IForms';
 import {IIcons} from './interface/IIcons';
 import {IRenderer} from './interface/IRenderer';
 import {ISettings} from './interface/ISettings';
-import {ITranslations} from './interface/ITranslations';
-import {TranslationsDe} from './translations/_translations_de';
-import {TranslationsEn} from './translations/_translations_en';
+import {Translations} from './translations/_translations';
 
 export class Config implements IConfig {
 
   identifier = 'default';
 
-  translations: ITranslations = {
-    de: new TranslationsDe(),
-    en: new TranslationsEn(),
-  };
+  translations = new Translations();
 
   settings: ISettings = {
     avatars: true,

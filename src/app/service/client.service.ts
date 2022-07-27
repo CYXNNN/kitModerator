@@ -26,9 +26,6 @@ export class ClientService {
   userId: 'parental-identifier';
   config: Config = new Config();
 
-  // FIXME use actual language instead of hardcoded german
-  locale: 'en' | 'de' = 'de';
-
   constructor(@Inject(DOCUMENT) private document: Document) {
   }
 
@@ -40,15 +37,7 @@ export class ClientService {
   }
 
   public getTranslations(): Translations {
-    switch (this.locale) {
-
-      case 'de':
-        return this.config.translations.de;
-      case 'en':
-        return this.config.translations.en;
-      default:
-        return this.config.translations.en;
-    }
+    return this.config.translations;
   }
 
   private injectTheme(): void {

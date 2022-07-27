@@ -1,3 +1,4 @@
+import {Translations} from '../translations/_translations';
 import {IForms} from './IForms';
 import {IIcons} from './IIcons';
 import {IRenderer} from './IRenderer';
@@ -7,9 +8,10 @@ export interface IConfig {
 
   readonly identifier;
 
-  settings: ISettings;
-  icons: IIcons;
+  translations: Translations;
   renderer: IRenderer;
   forms: IForms;
+  settings: ISettings;
+  icons: IIcons;
 
 }

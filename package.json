@@ -9,7 +9,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "complexity": "./node_modules/.bin/es6-plato -r -d ./report-complexity src",
+    "complexity": "ts-plato -r -d ./report-complexity src",
     "e2e": "ng e2e"
   },
   "private": true,
