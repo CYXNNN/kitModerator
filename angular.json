@@ -72,6 +72,11 @@
                 "input": "src/theme/zeta/zeta.scss",
                 "bundleName": "zeta",
                 "inject": false
+              },
+              {
+                "input": "src/theme/eta/eta.scss",
+                "bundleName": "eta",
+                "inject": false
               }
 
             ],
