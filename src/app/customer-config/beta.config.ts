@@ -1,3 +1,4 @@
+import {Abwesenheit} from '../model/abwesenheit';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {BetaTranslations} from './translations/beta/beta.translations';
@@ -17,5 +18,10 @@ export class BetaConfig extends Config {
       new FormField('reason'),
       new FormField('comment', 'textarea', []),
     ],
+  };
+
+  renderer = {
+    ...this.renderer,
+    abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.reason} ${abwesenheit.fromDate} ${abwesenheit.toDate}`,
   };
 }
