@@ -67,6 +67,11 @@
                 "input": "src/theme/epsilon/epsilon.scss",
                 "bundleName": "epsilon",
                 "inject": false
+              },
+              {
+                "input": "src/theme/zeta/zeta.scss",
+                "bundleName": "zeta",
+                "inject": false
               }
 
             ],
