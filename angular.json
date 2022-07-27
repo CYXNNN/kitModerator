@@ -82,6 +82,11 @@
                 "input": "src/theme/theta/theta.scss",
                 "bundleName": "theta",
                 "inject": false
+              },
+              {
+                "input": "src/theme/iota/iota.scss",
+                "bundleName": "iota",
+                "inject": false
               }
 
             ],
