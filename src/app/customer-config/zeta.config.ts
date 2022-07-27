@@ -1,3 +1,4 @@
+import {Abwesenheit} from '../model/abwesenheit';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {ZetaTranslations} from './translations/zeta/zeta.translations';
@@ -16,5 +17,9 @@ export class ZetaConfig extends Config {
       new FormField('comment', 'textarea', []),
       new FormField('reason'),
     ],
+  };
+  renderer = {
+    ...this.renderer,
+    abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.toDate} ${abwesenheit.fromDate} ${abwesenheit.reason}`,
   };
 }
