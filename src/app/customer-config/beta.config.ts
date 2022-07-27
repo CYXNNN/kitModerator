@@ -25,5 +25,6 @@ export class BetaConfig extends Config {
     ...this.renderer,
     abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.reason} ${abwesenheit.fromDate} ${abwesenheit.toDate}`,
     childRow: (child: Child) => `${child.name} ${child.lastname}`,
+    childSelect: (child: Child) => `${child.name} ${child.lastname}`,
   };
 }
