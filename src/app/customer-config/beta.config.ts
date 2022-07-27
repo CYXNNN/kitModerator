@@ -1,4 +1,5 @@
 import {Abwesenheit} from '../model/abwesenheit';
+import {Child} from '../model/child';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {BetaTranslations} from './translations/beta/beta.translations';
@@ -23,5 +24,6 @@ export class BetaConfig extends Config {
   renderer = {
     ...this.renderer,
     abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.reason} ${abwesenheit.fromDate} ${abwesenheit.toDate}`,
+    childRow: (child: Child) => `${child.name} ${child.lastname}`,
   };
 }
