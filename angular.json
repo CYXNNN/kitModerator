@@ -62,6 +62,11 @@
                 "input": "src/theme/delta/delta.scss",
                 "bundleName": "delta",
                 "inject": false
+              },
+              {
+                "input": "src/theme/epsilon/epsilon.scss",
+                "bundleName": "epsilon",
+                "inject": false
               }
 
             ],
