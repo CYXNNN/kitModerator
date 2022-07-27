@@ -1,3 +1,4 @@
+import {Abwesenheit} from '../model/abwesenheit';
 import {FormField} from '../model/formField';
 import {Config} from './_config';
 import {GammaTranslations} from './translations/gamma/gamma.translations';
@@ -16,5 +17,10 @@ export class GammaConfig extends Config {
       new FormField('reason'),
       new FormField('comment', 'textarea', []),
     ],
+  };
+
+  renderer = {
+    ...this.renderer,
+    abwesenheitRow: (abwesenheit: Abwesenheit) => `${abwesenheit.fromDate} ${abwesenheit.toDate} ${abwesenheit.reason}`,
   };
 }
