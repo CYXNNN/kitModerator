@@ -73,4 +73,18 @@ export class StateService {
       duration: 2000,
     }).then(t => t.present().then(_ => this.nav.back()));
   }
+
+  public testkk() {
+    this.testkk2();
+  }
+
+  public testkk2() {
+    this.testkk2();
+  }
+
+  public testkk3() {
+    if (true) {
+      return;
+    }
+  }
 }
