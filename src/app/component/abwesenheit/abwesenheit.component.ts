@@ -31,15 +31,10 @@ export class AbwesenheitComponent implements IConfirmableForm, IForm, OnInit {
     this.route.params.subscribe(params => {
       const id = params.id;
 
-      if (!id) {
-        return;
-      }
-
       this.state.abwesenheiten$.pipe(
         map(arr => arr.filter(a => a.id === id)),
       ).subscribe(next => {
         this.toPatch = next[0];
-        // fixme use resolver
         this.state.selectedAbwesenheit = next[0];
       });
 
