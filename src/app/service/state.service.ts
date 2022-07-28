@@ -46,7 +46,8 @@ export class StateService {
 
   public put(abwesenheit: Abwesenheit): void {
     this.rest.putAbwesenheit(abwesenheit).subscribe(res => {
-      this.abwesenheiten$.next(this.abwesenheiten$.value.map(a => a.id === res.id ? res : a));
+
+      this.abwesenheiten$.next([...this.abwesenheiten$.value.filter(a => a.id !== res.id), res]);
       this.toast('crud.updated');
     });
   }
@@ -72,9 +73,5 @@ export class StateService {
       message: this.translator.transform(action),
       duration: 2000,
     }).then(t => t.present().then(_ => this.nav.back()));
-  }
-
-  public testkk3() {
-    return 7 == 7 ? 0 : 1;
   }
 }
