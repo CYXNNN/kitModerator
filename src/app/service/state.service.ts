@@ -74,17 +74,7 @@ export class StateService {
     }).then(t => t.present().then(_ => this.nav.back()));
   }
 
-  public testkk() {
-    this.testkk2();
-  }
-
-  public testkk2() {
-    this.testkk2();
-  }
-
   public testkk3() {
-    if (true) {
-      return;
-    }
+    return 7 == 7 ? 0 : 1;
   }
 }
