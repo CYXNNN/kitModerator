@@ -59,9 +59,7 @@ export class ClientService {
   private removeTheme(): void {
 
     const currentTheme = this.document.getElementById('theme');
+    currentTheme.remove();
 
-    if (currentTheme) {
-      currentTheme.remove();
-    }
   }
 }
